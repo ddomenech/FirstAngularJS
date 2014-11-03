@@ -14,11 +14,13 @@
 							<th><a ng-click="ordenar('nombre')">Nombre</a>
 							<span class="caret" style="cursor: pointer" ng-click="ordenar('-nombre')"></span>
 							</th>
-							<th><a ng-click="ordenar('apellidos')">Apellidos</a></th>
+							<th><a ng-click="ordenar('apellidos')">Apellidos</a>
+							<span class="caret" style="cursor: pointer" ng-click="ordenar('-apellidos')"></span>
+							</th>
 							<th><a ng-click="ordenar('fechainicio')">Fecha Nacimiento</a></th>
 							<th><a ng-click="ordenar('telefono')">Telefono</a></th>
-							<th><a ng-click="ordenar('telefono')">Salario</a></th>
-							<th><a ng-click="ordenar('telefono')">Tipo</a></th>
+							<th><a ng-click="ordenar('salario')">Salario</a></th>
+							<th><a ng-click="ordenar('tipo')">Tipo</a></th>
 							<tbody>
 								<tr ng-repeat="empleado in empleados |orderBy:ordenselec | filter:buscar">
 									<td>{{empleado.nombre | uppercase}}</td>
