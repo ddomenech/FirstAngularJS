@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'firebase'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -31,7 +32,10 @@ angular
         templateUrl: 'views/tareas.html',
         controller: 'TareasCtrl'
       })
-
+      .when('/empleados', {
+        templateUrl: 'views/empleados.html',
+        controller: 'EmpleadosCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

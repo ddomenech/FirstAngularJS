@@ -14,4 +14,6 @@ angular.module('tareasAsoinApp')
       'AngularJS',
       'Karma'
     ];
+    $scope.texto1 = {titulo: 'Directiva ', subtitulo:' AngularJs'};
+	$scope.texto2 = {titulo: 'Otro codigo ', subtitulo:' Como parametro'};
   });

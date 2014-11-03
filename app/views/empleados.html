@@ -1,0 +1,36 @@
+		<h1>Empleados</h1>
+		<hr>
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+					<input type="text" class="form-control" placeholder="Buscar Empleado" ng-model="buscar.apellidos">
+				</div>
+			</div>
+			<div class="panel-body">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th><a ng-click="ordenar('nombre')">Nombre</a>
+							<span class="caret" style="cursor: pointer" ng-click="ordenar('-nombre')"></span>
+							</th>
+							<th><a ng-click="ordenar('apellidos')">Apellidos</a></th>
+							<th><a ng-click="ordenar('fechainicio')">Fecha Nacimiento</a></th>
+							<th><a ng-click="ordenar('telefono')">Telefono</a></th>
+							<th><a ng-click="ordenar('telefono')">Salario</a></th>
+							<th><a ng-click="ordenar('telefono')">Tipo</a></th>
+							<tbody>
+								<tr ng-repeat="empleado in empleados |orderBy:ordenselec | filter:buscar">
+									<td>{{empleado.nombre | uppercase}}</td>
+									<td>{{empleado.apellidos}}</td>
+									<td>{{empleado.fechainicio | date}} <!--a las {{empleado.fechainicio | date:'hh:mm'}}--></td>
+									<td>{{empleado.telefono}}</td>
+									<td>{{empleado.salario | currency}}</td>
+									<td>{{empleado.recurso}}</td>
+								</tr>
+							</tbody>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
