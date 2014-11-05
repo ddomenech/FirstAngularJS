@@ -16,7 +16,9 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'firebase'
+    'firebase',
+    'ui.bootstrap',
+    'ui.date'
   ])
   .config(function ($routeProvider) {
     $routeProvider

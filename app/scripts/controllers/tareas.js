@@ -26,7 +26,7 @@ angular.module('tareasAsoinApp')
 		$scope.textoNuevaTarea ='';*/
       $scope.tareas.$add({texto: $scope.textoNuevaTarea, hecho: false});
       $scope.textoNuevaTarea ='' ;
-    };
+    }
 
     $scope.restantes = function() {
     //var tareasX = $scope.tareas.$asObject();  
@@ -36,12 +36,12 @@ angular.module('tareasAsoinApp')
 		});
 		return cuenta;
     //  return $scope.tareas.length; //version firebase
-    };
+    }
 
     $scope.eliminar = function() {
         var temptareas = $scope.tareas;
     		angular.forEach(temptareas, function(tarea) {
 				if (tarea.hecho) $scope.tareas.$remove(tarea);
     		});
-    };
+    }
   });

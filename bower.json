@@ -6,14 +6,17 @@
     "json3": "~3.3.1",
     "es5-shim": "~3.1.0",
     "bootstrap": "~3.2.0",
+    "angular-bootstrap": "~0.10.0",
     "angular-resource": "~1.2.0",
     "angular-cookies": "~1.2.0",
     "angular-sanitize": "~1.2.0",
     "angular-animate": "~1.2.0",
     "angular-touch": "~1.2.0",
     "angular-route": "~1.2.0",
-	"angularfire": "~0.0.0",
-    "firebase": "~1.0.24"
+	  "angularfire": "~0.0.0",
+    "firebase": "~1.0.24",
+    "angular-ui-date": "~0.0.3",    
+    "jquery": "~2.1.0"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.0",

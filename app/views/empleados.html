@@ -1,5 +1,87 @@
-		<h1>Empleados</h1>
+		<h2>Empleados</h2>
+		    <script type = "text/ng-template" id="Empleado-form.html">
+        <form name="form" role="form" novalidate
+              class="ng-scope ng-invalid ng-invalid-required ng-dirty"
+              ng-submit="ok()">
+
+            <div class="modal-header">
+                <button type="button" class="close"
+                        ng-click="cancel()">&times;</button>
+                <h4 class="modal-title" id="myEmpleadosLabel">Crear, Editar Empleados</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>ID:</label>
+                    <input type="text" class="form-control" name="id"
+                           ng-model="empleado.id" readonly>
+                </div>            
+                <div class="form-group">
+                    <label>Nombre:</label>
+                    <input type="text" class="form-control" name="nombre"
+                           ng-model="empleado.nombre" ng-required="true">
+                </div>
+
+                
+                <div class="form-group">
+                    <label>Apellidos:</label>
+                    
+                    <input type="text" class="form-control" name="apellidos"
+                           ng-model="empleado.apellidos" ng-required="false"
+                           ng-minlength=0 ng-maxlength=200/>
+                    <span class="error" ng-show="form.apellidos.$error.minlength">Must be at least 0 characters.</span>
+                    <span class="error" ng-show="form.apellidos.$error.maxlength">Must be at most 200 characters.</span>
+                </div>
+                
+                <div class="form-group">
+                    <label>Fecha Inicio:</label>
+                    
+                    <input type="text" class="form-control" name="fecha" ui-date="date_firstDateOptions" ui-date-format="dd-mm-yy" 
+                           ng-model="empleado.fecha" ng-required="true"/>
+                </div>
+                
+                <div class="form-group">
+                    <label>Salario:</label>
+                    
+                    <input type="nomber" class="form-control" name="salario" 
+                           ng-model="empleado.salario" ng-required="false"/>
+                </div>
+
+                <div class="form-group">
+                    <label>Telefono:</label>
+                    
+                    <input type="text" class="form-control" name="telefono" 
+                           ng-model="empleado.telefono" ng-required="false"/>
+                </div>
+                
+                <div class="form-group">
+                    <label>Tipo:</label>
+                    
+                    <input type="text" class="form-control" name="tipo"
+                           ng-model="empleado.tipo" ng-required="false"/>                   
+                </div>
+                
+                <div class="form-group">
+                    <label>Activo:</label>
+                    
+                    <input type="checkbox" name="activo"
+                           ng-model="empleado.activo" ng-required="false"/>
+                </div>
+                
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" ng-click="cancel()">Cancelar
+                </button>
+                <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Guardar</button>
+            </div>
+        </form>
+    </script>
+
+    <button class="btn btn-primary btn-lg" ng-click="crear()">
+    <span class="glyphicon glyphicon-person"></span> Nuevo Empleado
+    </button>
 		<hr>
+
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<div class="input-group">
@@ -25,10 +107,10 @@
 								<tr ng-repeat="empleado in empleados |orderBy:ordenselec | filter:buscar">
 									<td>{{empleado.nombre | uppercase}}</td>
 									<td>{{empleado.apellidos}}</td>
-									<td>{{empleado.fechainicio | date}} <!--a las {{empleado.fechainicio | date:'hh:mm'}}--></td>
+									<td>{{empleado.fecha | date}} <!--a las {{empleado.fechainicio | date:'hh:mm'}}--></td>
 									<td>{{empleado.telefono}}</td>
 									<td>{{empleado.salario | currency}}</td>
-									<td>{{empleado.recurso}}</td>
+									<td>{{empleado.tipo}}</td>
 								</tr>
 							</tbody>
 						</tr>
@@ -36,3 +118,4 @@
 				</table>
 			</div>
 		</div>
+
