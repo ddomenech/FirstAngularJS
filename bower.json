@@ -13,7 +13,7 @@
     "angular-animate": "~1.2.0",
     "angular-touch": "~1.2.0",
     "angular-route": "~1.2.0",
-	  "angularfire": "~0.0.0",
+	  "angularfire": "latest",
     "firebase": "~1.0.24",
     "angular-ui-date": "~0.0.3",    
     "jquery": "~2.1.0"
