@@ -32,18 +32,18 @@
                     <span class="error" ng-show="form.apellidos.$error.maxlength">Must be at most 200 characters.</span>
                 </div>
                 
-                <div class="form-group">
+                <!--<div class="form-group">-->
                     <label>Fecha Inicio:</label>
                     <div class="row">
                     	<div class="col-md-6">
                     		<p class="input-group">
-                    		              			<input type="text" class="form-control" name="fecha" datepicker-popup="dd-MM-yyyy" ng-model="empleado.fecha" is-open="opened" max-date="'2015-06-22'" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
-                    		              			<span class="input-group-btn">
-                    		                		<button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                    		              			</span>
-                    		            		</p>
+                    		     <input type="text" class="form-control" name="fecha" datepicker-popup="dd-MM-yyyy" ng-model="empleado.fecha" is-open="opened" max-date="'2015-06-22'" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                    		     <span class="input-group-btn">
+                    		     	<button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    		     </span>
+                    		 </p>
                     	</div>
-                    </div>
+                  <!--  </div>-->
                 </div>
                 
                 <div class="form-group">

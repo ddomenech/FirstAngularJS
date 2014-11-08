@@ -71,16 +71,17 @@ angular.module('tareasAsoinApp')
   	 	$scope.empleado = empleado;
   		
   		$scope.dateOptions = {
-  			dateFormat: 'dd-MM-yyyy',
+  			formatYear: 'yyyy',
   			startingDay: 1
   		}
   		$scope.open = function($event) {
     		$event.preventDefault();
 	    	$event.stopPropagation();
-
+    		console.log("entra en open");	
     		$scope.opened = true;
   		};
   		$scope.ok = function() {
+  			console.log($scope.empleado.fecha);
   			$modalInstance.close($scope.empleado);
   		}
 
