@@ -7,6 +7,13 @@
  * # EmpleadosCtrl
  * Controller of the tareasAsoinApp
  */
+
+angular.module('tareasAsoinApp').filter('TelefonoFl', function() {
+	return function(telefono) {
+		return telefono.substr(0,2) + ' ' + telefono.substr(2,3) + ' ' + telefono.substr(5, 2) + ' ' + telefono.substr(7,2);
+	}
+})
+
 angular.module('tareasAsoinApp')
   .controller('EmpleadosCtrl', ['$scope', '$modal', '$firebase', 
   	function ($scope, $modal, $firebase) {
