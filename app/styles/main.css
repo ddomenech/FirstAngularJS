@@ -76,4 +76,28 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+
+  .difuminar {
+    -webkit-transition: ease-in-out 900ms;
+    -moz-transition: ease-in-out 900ms;
+    -ms-transition: ease-in-out 900ms;
+    -o-transition: ease-in-out 900ms;
+    transition: ease-in-out 900ms;
+  }
+
+  .difuminar.ng-enter {
+    opacity: 0;
+  }
+
+  .difuminar.ng-etner-active {
+    opacity: 1;
+  }
+
+  .difuminar.ng-leave {
+    opacity: 1;
+  }
+
+  .difuminar.ng-leave-active {
+    opacity: 0;
+  }
 }

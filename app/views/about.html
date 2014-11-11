@@ -1,5 +1,6 @@
 <div class="container">
-	<about-Directive texto="texto1"></about-Directive>
+	<about-Directive texto="texto1" class="animar" ng-if="visible"></about-Directive>
 	<about-Directive texto="texto2"></about-Directive>
+	<button class="btn btn-success btn-lg " ng-click="visible=!visible"><span class="glyphicon glyphicon-play" ></span></button>
 </div>
 

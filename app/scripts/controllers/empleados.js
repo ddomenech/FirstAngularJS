@@ -22,6 +22,7 @@ angular.module('tareasAsoinApp')
       'AngularJS',
       'Karma'
     ];
+    $scope.visible = true;
     var refEmpleados = new Firebase("https://tareasddp.firebaseio.com/empleados")
     var syncFireEmp = $firebase(refEmpleados);
     $scope.empleados = syncFireEmp.$asArray();

@@ -1,4 +1,4 @@
-		<h2>Empleados</h2>
+		<h2 class="difuminar" ng-if="visible">Empleados</h2>
 		    <script type = "text/ng-template" id="Empleado-form.html">
         <form name="form" role="form" novalidate
               class="ng-scope ng-invalid ng-invalid-required ng-dirty"
@@ -85,7 +85,7 @@
     </script>
 
     <button class="btn btn-primary btn-lg" ng-click="crear()">
-    <span class="glyphicon glyphicon-user"></span> Nuevo Empleado
+    <span class="glyphicon glyphicon-user" ></span> Nuevo Empleado
     </button>
 		<hr>
 
