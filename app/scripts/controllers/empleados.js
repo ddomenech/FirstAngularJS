@@ -8,30 +8,33 @@
  * Controller of the tareasAsoinApp
  */
 
-angular.module('tareasAsoinApp').filter('TelefonoFl', function() {
-	return function(telefono) {
-		return telefono.substr(0,2) + ' ' + telefono.substr(2,3) + ' ' + telefono.substr(5, 2) + ' ' + telefono.substr(7,2);
-	}
-})
 
 angular.module('tareasAsoinApp')
-  .controller('EmpleadosCtrl', ['$scope', '$modal', '$firebase', 
-  	function ($scope, $modal, $firebase) {
+  .controller('EmpleadosCtrl', ['$scope', '$modal', 'api', 'authState',
+  	function ($scope, $modal, api, authState) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
+
+    $scope.authState = authState;
+
     $scope.visible = true;
-    var refEmpleados = new Firebase("https://tareasddp.firebaseio.com/empleados")
-    var syncFireEmp = $firebase(refEmpleados);
-    $scope.empleados = syncFireEmp.$asArray();
+    //var refEmpleados = new Firebase("https://tareasddp.firebaseio.com/empleados")
+    //var syncFireEmp = $firebase(refEmpleados);
+    $scope.list = function() {
+    	api.empleados.query(function(data){
+    		$scope.empleados = data.results;
+    	});
+    };
+    $scope.list();
+    //syncFireEmp.$asArray();
     
 	$scope.limpiar = function(){
 		var nextid = 0;
-		nextid = $scope.empleados.length;
 		$scope.empleado = {
-		id: nextid+1, 
+		id: id, 
 		nombre: '', 
 		apellidos: '', 
 		fecha: null,	
@@ -74,8 +77,10 @@ angular.module('tareasAsoinApp')
 	}
 	
   }])
-  .controller('EmpleadoSaveCntrl', ['$scope', '$modalInstance', 'empleado',
-  	 function ($scope, $modalInstance, empleado) {
+  .controller('EmpleadoSaveCntrl', ['$scope', '$modalInstance', 'empleado', 'api', 'authState',
+  	 function ($scope, $modalInstance, empleado, authState) {
+ 		$scope.authState = authState;
+
   	 	$scope.empleado = empleado;
   		
   		$scope.dateOptions = {
@@ -96,4 +101,9 @@ angular.module('tareasAsoinApp')
   		$scope.cancel = function() {
   			$modalInstance.dismiss('cancel');
   		}
-  }])
+  }]);
+angular.module('tareasAsoinApp').filter('TelefonoFl', function() {
+	return function(telefono) {
+		return telefono.substr(0,2) + ' ' + telefono.substr(2,3) + ' ' + telefono.substr(5, 2) + ' ' + telefono.substr(7,2);
+	}
+})

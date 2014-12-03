@@ -112,12 +112,12 @@
 							<th><a ng-click="ordenar('tipo')">Tipo</a></th>
 							<tbody>
 								<tr ng-repeat="empleado in empleados |orderBy:ordenselec | filter:buscar">
-									<td>{{empleado.nombre | uppercase}}</td>
-									<td>{{empleado.apellidos}}</td>
-									<td>{{empleado.fecha | date}} <!--a las {{empleado.fechainicio | date:'hh:mm'}}--></td>
+									<td>{{empleado.nombre_empleado | uppercase}}</td>
+									<td>{{empleado.Apellidos_empleado}}</td>
+									<td>{{empleado.Fecha_empleado | date}} <!--a las {{empleado.fechainicio | date:'hh:mm'}}--></td>
 									<td>{{empleado.telefono | TelefonoFl}}</td>
-									<td>{{empleado.salario | currency}}</td>
-									<td>{{empleado.tipo}}</td>
+									<td>{{empleado.Salario_empleado | currency}}</td>
+									<td>{{empleado.puesto.nombre_puesto}}</td>
 								</tr>
 							</tbody>
 						</tr>
